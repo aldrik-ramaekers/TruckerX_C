@@ -31,7 +31,7 @@ static void menu_draw_title(platform_window* window)
 
 	float panel_scale = UI_SCALE(area.w);
 	s32 panel_w = 198 * panel_scale;
-	s32 panel_h = 80 * panel_scale;
+	s32 panel_h = 70 * panel_scale;
 	s32 panel_pad = 50*panel_scale;
 	s32 panel_x = area.x + panel_pad;
 	s32 panel_y = area.y + area.h - panel_h - panel_pad;
