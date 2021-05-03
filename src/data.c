@@ -1,7 +1,7 @@
 void data_load()
 {
 	img_logo = assets_load_image_from_file("data/img/logo.png");
-	img_world_map = assets_load_image_from_file("data/img/world-map.png");
+	img_world_map = assets_load_image_from_file("data/img/world_background.png");
 
 	img_panel_bottom = assets_load_image_from_file("data/img/panel_bottom.png");
 	img_panel_top = assets_load_image_from_file("data/img/panel_top.png");

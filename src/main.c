@@ -1,4 +1,8 @@
 #define ASSET_FONT_COUNT 25
+#define ASSET_WORKER_COUNT 4
+#define ASSET_QUEUE_COUNT 50
+#define ASSET_IMAGE_COUNT 20
+#define GAME_VERSION "0.1"
 
 #include <projectbase/project_base.h>
 
