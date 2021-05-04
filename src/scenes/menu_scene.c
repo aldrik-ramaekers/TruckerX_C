@@ -21,8 +21,20 @@ static void menu_draw_options(platform_window* window)
 
 	float panel_scale = UI_SCALE(area.w);
 	s32 panel_w = 198 * panel_scale;
-	s32 panel_h = 173 * panel_scale;
-	panel_render(screen_center_x - (panel_w/2), screen_center_y - (panel_h/2), panel_w, panel_h);
+	s32 panel_h = 193 * panel_scale;
+	s32 panel_x = screen_center_x - (panel_w/2);
+	s32 panel_y = screen_center_y - (panel_h/2);
+	panel_render(panel_scale, panel_x, panel_y, panel_w, panel_h);
+
+	s32 button_w = 178 * panel_scale;
+	s32 button_h = 37 * panel_scale;
+	s32 vertical_pad = 10 * panel_scale;
+	s32 pad_x = (panel_w - button_w)/2;
+	float pad_y = (panel_h - (vertical_pad*2) - button_h*4)/5.0f;
+	button_render(panel_scale, "New Game", panel_x + pad_x, vertical_pad + panel_y + pad_y*1, button_w, button_h);
+	button_render(panel_scale, "Continue", panel_x + pad_x, vertical_pad + panel_y + pad_y*2 + button_h*1, button_w, button_h);
+	button_render(panel_scale, "Settings", panel_x + pad_x, vertical_pad + panel_y + pad_y*3 + button_h*2, button_w, button_h);
+	button_render(panel_scale, "Quit", panel_x + pad_x, vertical_pad + panel_y + pad_y*4 + button_h*3, button_w, button_h);
 }
 
 static void menu_draw_title(platform_window* window)
@@ -32,10 +44,10 @@ static void menu_draw_title(platform_window* window)
 	float panel_scale = UI_SCALE(area.w);
 	s32 panel_w = 198 * panel_scale;
 	s32 panel_h = 70 * panel_scale;
-	s32 panel_pad = 50*panel_scale;
+	s32 panel_pad = 50 * panel_scale;
 	s32 panel_x = area.x + panel_pad;
 	s32 panel_y = area.y + area.h - panel_h - panel_pad;
-	panel_render(panel_x, panel_y, panel_w, panel_h);
+	panel_render(panel_scale, panel_x, panel_y, panel_w, panel_h);
 	
 	font* font_reg = FONT_REGULAR(SIZE_RD(area.w, 44));
 	font* font_sml = FONT_REGULAR(SIZE_RD(area.w, 20));

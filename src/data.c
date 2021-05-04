@@ -12,6 +12,15 @@ void data_load()
 	img_panel_topleft = assets_load_image_from_file("data/img/panel_topleft.png");
 	img_panel_topright = assets_load_image_from_file("data/img/panel_topright.png");
 
+	img_button_bottom = assets_load_image_from_file("data/img/button_bottom.png");
+	img_button_top = assets_load_image_from_file("data/img/button_top.png");
+	img_button_left = assets_load_image_from_file("data/img/button_left.png");
+	img_button_right = assets_load_image_from_file("data/img/button_right.png");
+	img_button_bottomleft = assets_load_image_from_file("data/img/button_bottomleft.png");
+	img_button_bottomright = assets_load_image_from_file("data/img/button_bottomright.png");
+	img_button_topleft = assets_load_image_from_file("data/img/button_topleft.png");
+	img_button_topright = assets_load_image_from_file("data/img/button_topright.png");
+
 	for (int i = 0; i < FONT_COUNT; i++) {
 		u16 size = FONT_START + (FONT_SIZE_SPACING * i);
 		font_regular[i] = assets_load_font_from_file("data/fonts/Exo-Regular.ttf", size);

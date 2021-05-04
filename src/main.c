@@ -6,15 +6,19 @@
 
 #include <projectbase/project_base.h>
 
+platform_window* main_window;
+
 #include "include/data.h"
 #include "include/game.h"
 #include "include/ui/panel.h"
+#include "include/ui/button.h"
 #include "include/scenes/loading_scene.h"
 #include "include/scenes/menu_scene.h"
 
 #include "data.c"
 #include "game.c"
 #include "ui/panel.c"
+#include "ui/button.c"
 #include "scenes/loading_scene.c"
 #include "scenes/menu_scene.c"
 
@@ -30,14 +34,14 @@ int main(int argc, char** argv)
 {
 	platform_init(argc, argv, CONFIG_DIRECTORY);
 
-    platform_window *window = platform_open_window("TruckerX",
+    main_window = platform_open_window("TruckerX",
                 1280, 720 + platform_get_titlebar_height(), 1920, 1080, 960, 540 + platform_get_titlebar_height(), update_render_game, 0);
 
 	data_load();
 	game_set_active_scene(GAME_STATE_LOADING);
 
-    while(platform_keep_running(window)) {
-		window->do_draw = true;
+    while(platform_keep_running(main_window)) {
+		main_window->do_draw = true;
         platform_handle_events();
     }
 

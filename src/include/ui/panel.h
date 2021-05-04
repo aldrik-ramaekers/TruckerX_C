@@ -10,6 +10,6 @@
 // 1280 is our reference width.
 #define UI_SCALE(_w) (_w/1280.0f)
 
-void panel_render(s32 x, s32 y, s32 w, s32 h);
+void panel_render(float scale, s32 x, s32 y, s32 w, s32 h);
 
 #endif
